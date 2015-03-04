@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * File Name          : FSMC.c
-  * Date               : 27/02/2015 10:45:46
+  * Date               : 04/03/2015 17:51:18
   * Description        : This file provides code for the configuration
   *                      of the FSMC peripheral.
   ******************************************************************************
@@ -80,7 +80,6 @@ void MX_FSMC_Init(void)
   hsram1.Init.AsynchronousWait = FSMC_ASYNCHRONOUS_WAIT_DISABLE;
   hsram1.Init.WriteBurst = FSMC_WRITE_BURST_DISABLE;
   /* Timing */
-  /* Change in MX_CODE - gets updated when we refresh mxcube code generation */
   Timing.AddressSetupTime = LCD_ILI9341_FSMC_AST;
   Timing.AddressHoldTime = 1;
   Timing.DataSetupTime = LCD_ILI9341_FSMC_DST;
@@ -120,7 +119,7 @@ static void HAL_FSMC_MspInit(void){
   PD8   ------> FSMC_D13
   PD9   ------> FSMC_D14
   PD10   ------> FSMC_D15
-  PD11   ------> FSMC_A16
+  PD13   ------> FSMC_A18
   PD14   ------> FSMC_D0
   PD15   ------> FSMC_D1
   PD0   ------> FSMC_D2
@@ -135,18 +134,18 @@ static void HAL_FSMC_MspInit(void){
                           |GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
+  GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
   GPIO_InitStruct.Alternate = GPIO_AF12_FSMC;
 
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /* GPIO_InitStruct */
-  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11 
+  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_13 
                           |GPIO_PIN_14|GPIO_PIN_15|GPIO_PIN_0|GPIO_PIN_1 
                           |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_HIGH;
+  GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
   GPIO_InitStruct.Alternate = GPIO_AF12_FSMC;
 
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
@@ -192,7 +191,7 @@ static void HAL_FSMC_MspDeInit(void){
   PD8   ------> FSMC_D13
   PD9   ------> FSMC_D14
   PD10   ------> FSMC_D15
-  PD11   ------> FSMC_A16
+  PD13   ------> FSMC_A18
   PD14   ------> FSMC_D0
   PD15   ------> FSMC_D1
   PD0   ------> FSMC_D2
@@ -206,7 +205,7 @@ static void HAL_FSMC_MspDeInit(void){
                           |GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14 
                           |GPIO_PIN_15);
 
-  HAL_GPIO_DeInit(GPIOD, GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11 
+  HAL_GPIO_DeInit(GPIOD, GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_13 
                           |GPIO_PIN_14|GPIO_PIN_15|GPIO_PIN_0|GPIO_PIN_1 
                           |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_7);
 

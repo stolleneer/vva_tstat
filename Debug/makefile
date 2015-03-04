@@ -61,7 +61,7 @@ all: vva_tstat.elf secondary-outputs
 vva_tstat.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "C:\stm32ws\vva_tstat\TrueSTUDIO\vva_tstat Configuration\VVA_TSTAT_FLASH.ld" -Xlinker --gc-sections -L"C:\stm32ws\vva_tstat\STemWin\lib" -Wl,-Map,"vva_tstat.map" -v -o "vva_tstat.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -pedantic -Wall -Wmissing-declarations  -g3 -T "C:\stm32ws\vva_tstat\TrueSTUDIO\vva_tstat Configuration\VVA_TSTAT_FLASH.ld" -Xlinker --gc-sections -L"C:\stm32ws\vva_tstat\STemWin\lib" -Wl,-Map,"vva_tstat.map" -v -o "vva_tstat.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

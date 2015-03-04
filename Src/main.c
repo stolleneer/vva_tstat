@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * File Name          : main.c
-  * Date               : 27/02/2015 10:45:49
+  * Date               : 04/03/2015 17:51:20
   * Description        : Main program body
   ******************************************************************************
   *
@@ -37,6 +37,7 @@
 #include "adc.h"
 #include "crc.h"
 #include "i2c.h"
+#include "rtc.h"
 #include "tim.h"
 #include "gpio.h"
 #include "fsmc.h"
@@ -78,6 +79,7 @@ void update_touch(void);
 
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -96,6 +98,7 @@ int main(void)
   MX_CRC_Init();
   MX_FSMC_Init();
   MX_I2C1_Init();
+  MX_RTC_Init();
   MX_TIM3_Init();
 
   /* USER CODE BEGIN 2 */
@@ -122,6 +125,7 @@ int main(void)
   	GUI_Exec();
   }
   /* USER CODE END 3 */
+
 }
 
 /** System Clock Configuration
@@ -131,6 +135,7 @@ void SystemClock_Config(void)
 
   RCC_OscInitTypeDef RCC_OscInitStruct;
   RCC_ClkInitTypeDef RCC_ClkInitStruct;
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct;
 
   __PWR_CLK_ENABLE();
 
@@ -153,6 +158,10 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
   HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5);
+
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_RTC;
+  PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_HSE_DIV8;
+  HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct);
 
 }
 
