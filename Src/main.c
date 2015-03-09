@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * File Name          : main.c
-  * Date               : 04/03/2015 17:51:20
+  * Date               : 07/03/2015 11:48:12
   * Description        : Main program body
   ******************************************************************************
   *
@@ -68,6 +68,7 @@ void SystemClock_Config(void);
 extern WM_HWIN CreateHomeScreen(void);
 extern WM_HWIN CreateSplashScreen(void);
 
+void TFT_test(void);
 void show_splash(void);
 void update_touch(void);
 
@@ -99,7 +100,7 @@ int main(void)
   MX_FSMC_Init();
   MX_I2C1_Init();
   MX_RTC_Init();
-  MX_TIM3_Init();
+  MX_TIM9_Init();
 
   /* USER CODE BEGIN 2 */
   __CRC_CLK_ENABLE();										// need this for STemWin

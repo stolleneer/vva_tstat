@@ -4,16 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../gui/home_scr.c \
-../gui/splash_screen.c 
+../gui/HomeScreenDLG.c \
+../gui/SplashScreenDLG.c 
 
 OBJS += \
-./gui/home_scr.o \
-./gui/splash_screen.o 
+./gui/HomeScreenDLG.o \
+./gui/SplashScreenDLG.o 
 
 C_DEPS += \
-./gui/home_scr.d \
-./gui/splash_screen.d 
+./gui/HomeScreenDLG.d \
+./gui/SplashScreenDLG.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

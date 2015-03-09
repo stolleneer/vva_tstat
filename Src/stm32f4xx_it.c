@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file    stm32f4xx_it.c
-  * @date    04/03/2015 17:51:19
+  * @date    07/03/2015 11:48:11
   * @brief   Interrupt Service Routines.
   ******************************************************************************
   *
@@ -39,7 +39,6 @@
 #include "main.h"
 #include "GUI.h"
 extern volatile GUI_TIMER_TIME OS_TimeMS;
-extern TIM_HandleTypeDef htim3;
 
 /* USER CODE END 0 */
 /* External variables --------------------------------------------------------*/
@@ -93,9 +92,5 @@ void EXTI2_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
-void TIM3_IRQHandler(void)
-{
-  HAL_TIM_IRQHandler(&htim3);
-}
 /* USER CODE END 1 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -32,7 +32,8 @@ Src/tim.o: ../Src/tim.c C:/stm32ws/vva_tstat/Inc/tim.h \
  C:/stm32ws/vva_tstat/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h \
  C:/stm32ws/vva_tstat/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h \
  C:/stm32ws/vva_tstat/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
- C:/stm32ws/vva_tstat/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+ C:/stm32ws/vva_tstat/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ C:/stm32ws/vva_tstat/Inc/gpio.h
 
 C:/stm32ws/vva_tstat/Inc/tim.h:
 
@@ -103,3 +104,5 @@ C:/stm32ws/vva_tstat/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h:
 C:/stm32ws/vva_tstat/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 
 C:/stm32ws/vva_tstat/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+
+C:/stm32ws/vva_tstat/Inc/gpio.h:

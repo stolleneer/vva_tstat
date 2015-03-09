@@ -1,4 +1,4 @@
-gui/splash_screen.o: ../gui/splash_screen.c \
+gui/HomeScreenDLG.o: ../gui/HomeScreenDLG.c \
  C:/stm32ws/vva_tstat/STemWin/inc/DIALOG.h \
  C:/stm32ws/vva_tstat/STemWin/inc/WM.h \
  C:/stm32ws/vva_tstat/STemWin/inc/GUI_ConfDefaults.h \

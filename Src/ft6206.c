@@ -172,13 +172,13 @@ void FT6206_read_data(void){
   FT6206.touch_01_xpos <<= 8;					// left shift 8
   FT6206.touch_01_xpos |= raw_tp_data[4];		// OR with reg(0x04)
   
-  FT6206.touch_01_event = ((raw_tp_data[3]) >> 4) & 0b11;	//0b00->PressDown 0b01->LiftUp
+  FT6206.touch_01_event = ((raw_tp_data[3]) >> 4) & 0x03;	// mask with 0b11: 0b00->PressDown 0b01->LiftUp
 
   FT6206.touch_01_ypos = ((raw_tp_data[5]) & 0x0F);	// Mask low nibble of byte
   FT6206.touch_01_ypos <<= 8;					// left shift 8
   FT6206.touch_01_ypos |= raw_tp_data[6];		// OR with reg(0x06)
 
-  FT6206.touch_01_id = ((raw_tp_data[5]) >> 4) & 0b11;	//Invalid when ID 0x0F
+  FT6206.touch_01_id = ((raw_tp_data[5]) >> 4) & 0x03;	//Invalid when ID 0x0F
 	FT6206.touch_01_weight = raw_tp_data[7];
 	FT6206.touch_01_area = raw_tp_data[8];
 

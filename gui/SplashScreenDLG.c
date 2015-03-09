@@ -29,11 +29,11 @@
 *
 **********************************************************************
 */
-#define ID_WINDOW_0     (GUI_ID_USER + 0x00)
-#define ID_PROGBAR_0     (GUI_ID_USER + 0x01)
-#define ID_IMAGE_0     (GUI_ID_USER + 0x03)
+#define ID_WINDOW_0  (GUI_ID_USER + 0x00)
+#define ID_PROGBAR_0  (GUI_ID_USER + 0x01)
+#define ID_IMAGE_0  (GUI_ID_USER + 0x02)
 
-#define ID_IMAGE_0_IMAGE_0     0x00
+#define ID_IMAGE_0_IMAGE_0  0x00
 
 // USER START (Optionally insert additional defines)
 // USER END

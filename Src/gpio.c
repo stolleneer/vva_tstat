@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * File Name          : gpio.c
-  * Date               : 04/03/2015 17:51:17
+  * Date               : 07/03/2015 11:48:10
   * Description        : This file provides code for the configuration
   *                      of all used GPIO pins.
   ******************************************************************************
@@ -59,10 +59,10 @@ void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct;
 
   /* GPIO Ports Clock Enable */
+  __GPIOE_CLK_ENABLE();
   __GPIOH_CLK_ENABLE();
   __GPIOC_CLK_ENABLE();
   __GPIOB_CLK_ENABLE();
-  __GPIOE_CLK_ENABLE();
   __GPIOD_CLK_ENABLE();
   __GPIOA_CLK_ENABLE();
 
